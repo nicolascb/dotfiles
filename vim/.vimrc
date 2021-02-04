@@ -153,7 +153,7 @@ set number
 
 let no_buffers_menu=1
 " Use base16-default-dark
-set termguicolors
+" set termguicolors
 colorscheme sonokai 
 
 
@@ -566,3 +566,6 @@ endif
 
 " Shortcut for nohlsearch
 nnoremap ,<space> :nohlsearch<CR>
+
+set background=dark
+set t_Co=256
