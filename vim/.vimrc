@@ -51,7 +51,8 @@ Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'sainnhe/sonokai'
 Plug 'hexdigest/gounit-vim'
-
+Plug 'rust-lang/rust.vim'
+Plug 'morhetz/gruvbox'
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -79,7 +80,7 @@ Plug 'honza/vim-snippets'
 "*****************************************************************************
 
 " 
-
+Plug 'cespare/vim-toml'
 
 " go
 "" Go Lang Bundle
@@ -152,9 +153,6 @@ set ruler
 set number
 
 let no_buffers_menu=1
-" Use base16-default-dark
-" set termguicolors
-colorscheme sonokai 
 
 
 set mousemodel=popup
@@ -222,7 +220,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
+let g:airline_theme = 'gruvbox'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -569,3 +567,19 @@ nnoremap ,<space> :nohlsearch<CR>
 
 set background=dark
 set t_Co=256
+
+augroup remember_folds
+    autocmd!
+    autocmd BufWinLeave * mkview
+    autocmd BufWinEnter * silent! loadview
+augroup END
+
+" Set highlight syntax on code written inside markdown blocks
+let g:markdown_fenced_languages =
+            \ [
+            \   'conf', 'css', 'cucumber', 'dockerfile', 'go', 'java', 'javascript',
+            \   'json', 'make', 'php', 'xml', 'yaml', 'html'
+            \ ]
+" Use base16-default-dark
+" set termguicolors
+colorscheme gruvbox 
