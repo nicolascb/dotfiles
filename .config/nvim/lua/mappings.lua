@@ -49,6 +49,9 @@ map('n', '<Leader>o', ':.Gbrowse<CR>')
 
 -- golang
 map('n', '<Leader><Leader>l', ':GoLint<CR>')
+map('n', '<Leader><Leader>fs', ':GoFillStruct<CR>')
+map('n', '<Leader><Leader>at', ':GoAddTest<CR>')
+map('n', '<Leader><Leader>c', ':GoCoverage<CR>')
 
 -- telescope
 map('n', '<Leader>ff', ':Telescope find_files<CR>')
