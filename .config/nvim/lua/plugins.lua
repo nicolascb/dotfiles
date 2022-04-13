@@ -21,6 +21,9 @@ return packer.startup(function()
     use 'neovim/nvim-lspconfig'
     use {
         'nvim-treesitter/nvim-treesitter',
+        requires = {
+            'kyazdani42/nvim-web-devicons', -- optional, for file icon
+        },
         run = ':TSUpdate',
         config = function() require('nvim-treesitter.configs').setup {
             highlight = {
@@ -64,5 +67,9 @@ return packer.startup(function()
                 custom = { ".git" },
             },
         } end
+    }
+    use {
+        'nvim-lualine/lualine.nvim',
+        config = function() require('lualine').setup {} end
     }
 end)
